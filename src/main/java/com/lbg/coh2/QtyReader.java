@@ -3,16 +3,11 @@ package com.lbg.coh2;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class QtyReader extends UserInput {
-	
-	public QtyReader(IPrompt cp) {
-		super(cp);
-	}
+public class QtyReader {
 
-	@Override
     public String readFromKeyboard(InputStream is) {
     	Scanner theScanner = new Scanner(is);
-		prompt.prompt("Enter quantity: ");
+		System.out.print("Enter quantity: ");
     	return theScanner.nextLine();
     }
 }

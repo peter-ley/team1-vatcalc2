@@ -11,20 +11,19 @@ public class Runner {
 	
 	public Basket run() {
 		Basket basket = new Basket();
-		String menuInput;
-		
-		IPrompt prompt = new IPrompt();
-		IUserInput menuReader = new MenuReader(prompt);
+		MenuReader menuReader = new MenuReader();
+		PCodeReader pCodeReader = new PCodeReader();
+		QtyReader qtyReader = new QtyReader();
+		String menuInput, pCodeInput, qtyInput;
 		
 		while(true) {
-			
 			//Main menu
-			//View inventory
-			//Add item to basket
 			menuInput = menuReader.readFromKeyboard(System.in);
 			if (menuInput.equals("1")) {		// View inventory
         			
 			} else if (menuInput.equals("2")) {	// Add item to basket
+				pCodeInput = pCodeReader.readFromKeyboard(System.in);
+				qtyInput = qtyReader.readFromKeyboard(System.in);
 				
 			} else if (menuInput.equals("3")) {	// Checkout
 				break;
